@@ -2,9 +2,20 @@ import cv2 # pyright: ignore[reportMissingImports]
 import pickle
 import numpy as np # pyright: ignore[reportMissingImports]
 import os
+from check_live import liveness_check_or_abort
+
+
+
 
 if not os.path.exists('data/'):
     os.makedirs('data/')
+
+if not liveness_check_or_abort(video)
+   print("Liveness check failed. Registration is blocked.")
+   video.release()
+   cv2.destroyAllWindows()
+   exit()
+
 
 video = cv2.VideoCapture(0)
 facedetect = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml') # pyright: ignore[reportAttributeAccessIssue] # type: ignore # type: ignore

@@ -7,10 +7,18 @@ import csv
 import time
 from datetime import datetime
 from win32com.client import Dispatch
+from check_live import liveness_check_or_abort
 
 def speak(strl):
     speak = Dispatch(("SAPI.SpVoice"))
     speak.Speak(strl)
+
+if not liveness_check_or_abort(video)
+   print("Liveness check failed. Registration is blocked.")
+   video.release()
+   cv2.destroyAllWindows()
+   exit()
+
 
 video = cv2.VideoCapture(0)  
 facedetect = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml') # pyright: ignore[reportAttributeAccessIssue] # type: ignore # type: ignore  
