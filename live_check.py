@@ -82,7 +82,7 @@ def liveness_check_or_abort(video, max_attempts = 3):
     if check_live(video):
       print("[Liveness] Passed")
       return True
-    print("[Liveness] Failed(there is no blink detected / possible spoof)")
+    print("[Liveness] Failed(there is no blink detected, it can be a possible spoof)")
   print("[Liveness] Failed 3 times in a single row, aborting this session.")
   return False    
 
